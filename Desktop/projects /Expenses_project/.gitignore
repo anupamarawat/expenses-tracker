@@ -1,0 +1,17 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Database files
+*.db
+instance/
+
+# System files
+.DS_Store
+
+# CSV or sensitive files
+*.csv
+
+# Virtual environment
+venv/
+.env

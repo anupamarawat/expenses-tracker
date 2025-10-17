@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Analytics{% endblock %}
+{% block content %}
+<h2>Analytics - {{ username }}</h2>
+
+{% if categories %}
+<canvas id="expenseChart" width="400" height="400"></canvas>
+{% else %}
+<p>No expenses to display analytics.</p>
+{% endif %}
+
+<a href="{{ url_for('dashboard', username=username) }}" class="btn btn-primary mt-3">Back to Dashboard</a>
+
+<script>
+const ctx = document.getElementById('expenseChart').getContext('2d');
+const expenseChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: {{ categories|tojson }},
+        datasets: [{
+            label: 'Expenses by Category',
+            data: {{ totals|tojson }},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(75, 192, 192, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(255, 159, 64, 0.6)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: { responsive: true }
+});
+</script>
+{% endblock %}

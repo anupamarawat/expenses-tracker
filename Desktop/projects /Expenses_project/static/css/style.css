@@ -1,0 +1,13 @@
+body {
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+table th, table td {
+    vertical-align: middle !important;
+}
+
