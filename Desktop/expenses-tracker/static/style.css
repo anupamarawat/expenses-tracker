@@ -1,0 +1,13 @@
+body {
+  background-image: url('../images/background.jpg'); /* Relative path from css folder */
+  background-size: cover;          /* Make it cover whole page */
+  background-repeat: no-repeat;    /* Don’t repeat */
+  background-attachment: fixed;    /* Stay fixed on scroll */
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+table th, table td {
+  vertical-align: middle !important;
+}
